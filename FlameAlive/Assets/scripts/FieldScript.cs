@@ -21,12 +21,10 @@ public class FieldScript : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other) {
-        Debug.Log("collision enter");
         numberOfCollidingClouds++;
     }
 
     void OnTriggerExit(Collider other) {
-        Debug.Log("collision exit");
         numberOfCollidingClouds--;
     }
 }
