@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WindController : MonoBehaviour {
-    public float distanceToReset = 12;
+    public float distanceToReset;
     int numberOfClouds;
     float[] speedCoefficient;
     Vector3 windDirection = new Vector3(0, 0, 5);
+    Vector3 previousMousePosition = Vector3.zero;
 
     // Start is called before the first frame update
     void Start() {
         numberOfClouds = transform.childCount;
         speedCoefficient = new float[numberOfClouds];
         for (int i = 0; i < numberOfClouds; i++) {
-            resetCloud(i, UnityEngine.Random.Range(3, 16));
+            resetCloud(i, UnityEngine.Random.Range(-distanceToReset, distanceToReset));
         }
         // Debug.Break();
     }
@@ -32,6 +33,16 @@ public class WindController : MonoBehaviour {
                 resetCloud(i, 12);
             }
         }
+
+        var mousePosition = new Vector3(Input.mousePosition.x, 0, Input.mousePosition.y);
+        if (Input.GetMouseButton(0)) {
+            var difference = (mousePosition - previousMousePosition);
+            difference.x /= Screen.width;
+            difference.z /= Screen.height;
+            windDirection += difference / Time.deltaTime;
+        }
+
+        previousMousePosition = mousePosition;
     }
 
     void resetCloud(int i, float distanceToCenter) {
@@ -40,9 +51,8 @@ public class WindController : MonoBehaviour {
         var direction = windDirection;
         direction.Normalize();
         direction *= distanceToCenter;
-        Debug.Log(direction);
         var cross = Vector3.Cross(Vector3.up, direction);
-        var position = (cross * UnityEngine.Random.Range(-0.5f, 0.5f)) - direction;
+        var position = (cross * UnityEngine.Random.Range(-1f, 1f)) - direction;
         position.y = UnityEngine.Random.Range(2f, 4f);
         cloud.transform.localScale = vectorOnRange(0.03f, 0.07f);
         cloud.transform.eulerAngles = new Vector3(0, UnityEngine.Random.Range(0, 180), 0);
