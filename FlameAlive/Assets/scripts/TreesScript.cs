@@ -6,7 +6,6 @@ public class TreesScript : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         foreach (Transform child in transform) {
-            Debug.Log("o");
             child.eulerAngles = new Vector3(0, UnityEngine.Random.Range(0, 360), 0);
             child.localScale = vectorOnRange(0.04f, 0.1f);
         }

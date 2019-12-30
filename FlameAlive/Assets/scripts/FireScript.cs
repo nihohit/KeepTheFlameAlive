@@ -1,25 +1,27 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FieldScript : MonoBehaviour {
-    public GameObject textObject;
-    public string headerText;
+public class FireScript : MonoBehaviour {
     public int gainPerUpdate;
     public int lossPerUpdate;
-    private UnityEngine.UI.Text textField;
+    public GameObject healthObject;
+    private UnityEngine.UI.Slider slider;
     private int numberOfCollidingClouds = 0;
-    private long score;
+    private int score;
 
     // Start is called before the first frame update
     void Start() {
-        textField = textObject.GetComponent<UnityEngine.UI.Text>();
+        slider = healthObject.GetComponent<UnityEngine.UI.Slider>();
+        score = (int) slider.value;
     }
 
     // Update is called once per frame
     void Update() {
-        score += numberOfCollidingClouds > 0 ? gainPerUpdate : -lossPerUpdate;
-        textField.text = headerText + " " + score / 10;
+        score += (numberOfCollidingClouds > 0) ? -lossPerUpdate : gainPerUpdate;
+        score = Math.Min(score, (int) slider.maxValue);
+        slider.value = score;
     }
 
     void OnTriggerEnter(Collider other) {
