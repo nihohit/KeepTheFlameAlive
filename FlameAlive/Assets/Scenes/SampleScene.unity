@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427135, b: 0.56452316, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -337,6 +337,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 43975007}
     m_Modifications:
+    - target: {fileID: 8133031271189506057, guid: d5e18d3dcbca247bdb6029649e175437,
+        type: 3}
+      propertyPath: m_Name
+      value: RG_Cloud-02 (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 8133031271189410857, guid: d5e18d3dcbca247bdb6029649e175437,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -391,11 +396,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8133031271189506057, guid: d5e18d3dcbca247bdb6029649e175437,
-        type: 3}
-      propertyPath: m_Name
-      value: RG_Cloud-02 (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e18d3dcbca247bdb6029649e175437, type: 3}
@@ -758,6 +758,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 43975007}
     m_Modifications:
+    - target: {fileID: 4320286072137316168, guid: 25726a42d486e4f58bbde44eb90fa296,
+        type: 3}
+      propertyPath: m_Name
+      value: RG_Cloud-04
+      objectReference: {fileID: 0}
     - target: {fileID: 4320286072136821608, guid: 25726a42d486e4f58bbde44eb90fa296,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -812,11 +817,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4320286072137316168, guid: 25726a42d486e4f58bbde44eb90fa296,
-        type: 3}
-      propertyPath: m_Name
-      value: RG_Cloud-04
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25726a42d486e4f58bbde44eb90fa296, type: 3}
@@ -875,6 +875,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2328,6 +2330,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
@@ -2624,6 +2628,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -3042,6 +3048,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 43975007}
     m_Modifications:
+    - target: {fileID: 8133031271189506057, guid: d5e18d3dcbca247bdb6029649e175437,
+        type: 3}
+      propertyPath: m_Name
+      value: RG_Cloud-02
+      objectReference: {fileID: 0}
     - target: {fileID: 8133031271189410857, guid: d5e18d3dcbca247bdb6029649e175437,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3096,11 +3107,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8133031271189506057, guid: d5e18d3dcbca247bdb6029649e175437,
-        type: 3}
-      propertyPath: m_Name
-      value: RG_Cloud-02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e18d3dcbca247bdb6029649e175437, type: 3}
@@ -3729,6 +3735,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 43975007}
     m_Modifications:
+    - target: {fileID: 8133031271189506057, guid: d5e18d3dcbca247bdb6029649e175437,
+        type: 3}
+      propertyPath: m_Name
+      value: RG_Cloud-02 (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 8133031271189410857, guid: d5e18d3dcbca247bdb6029649e175437,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3783,11 +3794,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8133031271189506057, guid: d5e18d3dcbca247bdb6029649e175437,
-        type: 3}
-      propertyPath: m_Name
-      value: RG_Cloud-02 (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e18d3dcbca247bdb6029649e175437, type: 3}
@@ -3941,6 +3947,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 43975007}
     m_Modifications:
+    - target: {fileID: 8133031271189506057, guid: d5e18d3dcbca247bdb6029649e175437,
+        type: 3}
+      propertyPath: m_Name
+      value: RG_Cloud-02
+      objectReference: {fileID: 0}
     - target: {fileID: 8133031271189410857, guid: d5e18d3dcbca247bdb6029649e175437,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3995,11 +4006,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8133031271189506057, guid: d5e18d3dcbca247bdb6029649e175437,
-        type: 3}
-      propertyPath: m_Name
-      value: RG_Cloud-02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e18d3dcbca247bdb6029649e175437, type: 3}
@@ -4929,6 +4935,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 43975007}
     m_Modifications:
+    - target: {fileID: 8133031271189506057, guid: d5e18d3dcbca247bdb6029649e175437,
+        type: 3}
+      propertyPath: m_Name
+      value: RG_Cloud-02 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 8133031271189410857, guid: d5e18d3dcbca247bdb6029649e175437,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4983,11 +4994,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8133031271189506057, guid: d5e18d3dcbca247bdb6029649e175437,
-        type: 3}
-      propertyPath: m_Name
-      value: RG_Cloud-02 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e18d3dcbca247bdb6029649e175437, type: 3}
@@ -5358,6 +5364,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 43975007}
     m_Modifications:
+    - target: {fileID: 4320286072137316168, guid: 25726a42d486e4f58bbde44eb90fa296,
+        type: 3}
+      propertyPath: m_Name
+      value: RG_Cloud-04
+      objectReference: {fileID: 0}
     - target: {fileID: 4320286072136821608, guid: 25726a42d486e4f58bbde44eb90fa296,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5412,11 +5423,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4320286072137316168, guid: 25726a42d486e4f58bbde44eb90fa296,
-        type: 3}
-      propertyPath: m_Name
-      value: RG_Cloud-04
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25726a42d486e4f58bbde44eb90fa296, type: 3}
@@ -5618,6 +5624,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7165,6 +7173,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 43975007}
     m_Modifications:
+    - target: {fileID: 4320286072137316168, guid: 25726a42d486e4f58bbde44eb90fa296,
+        type: 3}
+      propertyPath: m_Name
+      value: RG_Cloud-04 (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 4320286072136821608, guid: 25726a42d486e4f58bbde44eb90fa296,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7219,11 +7232,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4320286072137316168, guid: 25726a42d486e4f58bbde44eb90fa296,
-        type: 3}
-      propertyPath: m_Name
-      value: RG_Cloud-04 (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25726a42d486e4f58bbde44eb90fa296, type: 3}
@@ -7955,6 +7963,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -8387,7 +8397,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 53
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -8659,6 +8669,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -14730,6 +14742,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &1158807698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15175,6 +15189,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 43975007}
     m_Modifications:
+    - target: {fileID: 8133031271189506057, guid: d5e18d3dcbca247bdb6029649e175437,
+        type: 3}
+      propertyPath: m_Name
+      value: RG_Cloud-02
+      objectReference: {fileID: 0}
     - target: {fileID: 8133031271189410857, guid: d5e18d3dcbca247bdb6029649e175437,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15229,11 +15248,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8133031271189506057, guid: d5e18d3dcbca247bdb6029649e175437,
-        type: 3}
-      propertyPath: m_Name
-      value: RG_Cloud-02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e18d3dcbca247bdb6029649e175437, type: 3}
@@ -15361,6 +15375,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
@@ -15486,6 +15502,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -17379,6 +17397,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 43975007}
     m_Modifications:
+    - target: {fileID: 4320286072137316168, guid: 25726a42d486e4f58bbde44eb90fa296,
+        type: 3}
+      propertyPath: m_Name
+      value: RG_Cloud-04 (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 4320286072136821608, guid: 25726a42d486e4f58bbde44eb90fa296,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17433,11 +17456,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4320286072137316168, guid: 25726a42d486e4f58bbde44eb90fa296,
-        type: 3}
-      propertyPath: m_Name
-      value: RG_Cloud-04 (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25726a42d486e4f58bbde44eb90fa296, type: 3}
@@ -18100,6 +18118,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!4 &1716221412 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6992621963902217715, guid: 7f0db8637e20b4ae1bee20f0a4b21441,
@@ -18596,6 +18616,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 43975007}
     m_Modifications:
+    - target: {fileID: 8133031271189506057, guid: d5e18d3dcbca247bdb6029649e175437,
+        type: 3}
+      propertyPath: m_Name
+      value: RG_Cloud-02 (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 8133031271189410857, guid: d5e18d3dcbca247bdb6029649e175437,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18650,11 +18675,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8133031271189506057, guid: d5e18d3dcbca247bdb6029649e175437,
-        type: 3}
-      propertyPath: m_Name
-      value: RG_Cloud-02 (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e18d3dcbca247bdb6029649e175437, type: 3}
@@ -19040,6 +19060,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 43975007}
     m_Modifications:
+    - target: {fileID: 4320286072137316168, guid: 25726a42d486e4f58bbde44eb90fa296,
+        type: 3}
+      propertyPath: m_Name
+      value: RG_Cloud-04
+      objectReference: {fileID: 0}
     - target: {fileID: 4320286072136821608, guid: 25726a42d486e4f58bbde44eb90fa296,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19094,11 +19119,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4320286072137316168, guid: 25726a42d486e4f58bbde44eb90fa296,
-        type: 3}
-      propertyPath: m_Name
-      value: RG_Cloud-04
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25726a42d486e4f58bbde44eb90fa296, type: 3}
@@ -19567,6 +19587,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 43975007}
     m_Modifications:
+    - target: {fileID: 4320286072137316168, guid: 25726a42d486e4f58bbde44eb90fa296,
+        type: 3}
+      propertyPath: m_Name
+      value: RG_Cloud-04 (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 4320286072136821608, guid: 25726a42d486e4f58bbde44eb90fa296,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19621,11 +19646,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4320286072137316168, guid: 25726a42d486e4f58bbde44eb90fa296,
-        type: 3}
-      propertyPath: m_Name
-      value: RG_Cloud-04 (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25726a42d486e4f58bbde44eb90fa296, type: 3}
@@ -24979,6 +24999,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 43975007}
     m_Modifications:
+    - target: {fileID: 8133031271189506057, guid: d5e18d3dcbca247bdb6029649e175437,
+        type: 3}
+      propertyPath: m_Name
+      value: RG_Cloud-02
+      objectReference: {fileID: 0}
     - target: {fileID: 8133031271189410857, guid: d5e18d3dcbca247bdb6029649e175437,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25033,11 +25058,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8133031271189506057, guid: d5e18d3dcbca247bdb6029649e175437,
-        type: 3}
-      propertyPath: m_Name
-      value: RG_Cloud-02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e18d3dcbca247bdb6029649e175437, type: 3}
@@ -25117,6 +25137,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 43975007}
     m_Modifications:
+    - target: {fileID: 4320286072137316168, guid: 25726a42d486e4f58bbde44eb90fa296,
+        type: 3}
+      propertyPath: m_Name
+      value: RG_Cloud-04
+      objectReference: {fileID: 0}
     - target: {fileID: 4320286072136821608, guid: 25726a42d486e4f58bbde44eb90fa296,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25171,11 +25196,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4320286072137316168, guid: 25726a42d486e4f58bbde44eb90fa296,
-        type: 3}
-      propertyPath: m_Name
-      value: RG_Cloud-04
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25726a42d486e4f58bbde44eb90fa296, type: 3}
@@ -25260,6 +25280,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 43975007}
     m_Modifications:
+    - target: {fileID: 4320286072137316168, guid: 25726a42d486e4f58bbde44eb90fa296,
+        type: 3}
+      propertyPath: m_Name
+      value: RG_Cloud-04 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 4320286072136821608, guid: 25726a42d486e4f58bbde44eb90fa296,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25314,11 +25339,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4320286072137316168, guid: 25726a42d486e4f58bbde44eb90fa296,
-        type: 3}
-      propertyPath: m_Name
-      value: RG_Cloud-04 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25726a42d486e4f58bbde44eb90fa296, type: 3}
