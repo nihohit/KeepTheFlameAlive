@@ -45,6 +45,13 @@ public class WindController : MonoBehaviour {
             slider.value -= 100 * Time.deltaTime;
         } else {
             slider.value += 40 * Time.deltaTime;
+            if (Vector3.Distance(windDirection, Vector3.zero) < 5) {
+                var rateOfChange = 1.5f;
+                var xChange = UnityEngine.Random.Range(0f, rateOfChange);
+                var zChange = rateOfChange - xChange;
+                windDirection.x += (windDirection.x > 0 ? xChange : -xChange) * Time.deltaTime;
+                windDirection.z += (windDirection.z > 0 ? zChange : -zChange) * Time.deltaTime;
+            }
         }
 
         previousMousePosition = mousePosition;
