@@ -11,16 +11,23 @@ public class FireScript : MonoBehaviour {
     private UnityEngine.UI.Slider slider;
     private int numberOfCollidingClouds = 0;
     private int score;
+    private AudioSource sizzle;
 
     // Start is called before the first frame update
     void Start() {
         slider = healthObject.GetComponent<UnityEngine.UI.Slider>();
         score = (int) slider.value;
+        sizzle = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update() {
         score += (numberOfCollidingClouds > 0) ? -lossPerUpdate : gainPerUpdate;
+        if (numberOfCollidingClouds > 0) {
+            sizzle.mute = false;
+        } else {
+            sizzle.mute = true;
+        }
         score = Math.Min(score, (int) slider.maxValue);
         slider.value = score;
         if (score <= 0) {

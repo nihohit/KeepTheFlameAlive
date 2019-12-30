@@ -12,10 +12,12 @@ public class FieldScript : MonoBehaviour {
     private UnityEngine.UI.Text textField;
     private int numberOfCollidingClouds = 0;
     private float score;
+    private AudioSource popSound;
 
     // Start is called before the first frame update
     void Start() {
         textField = textObject.GetComponent<UnityEngine.UI.Text>();
+        popSound = GetComponentInChildren<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,6 +36,7 @@ public class FieldScript : MonoBehaviour {
         var effect = growable.GetComponentInChildren<ParticleSystem>();
         effect.Play();
         GameObject.Instantiate(Resources.Load("Cultist"), growable.transform.position, Quaternion.identity);
+        popSound.Play();
     }
 
     void OnTriggerEnter(Collider other) {
