@@ -24,7 +24,7 @@ public class WindController : MonoBehaviour {
         numberOfClouds = transform.childCount;
         speedCoefficient = new float[numberOfClouds];
         for (int i = 0; i < numberOfClouds; i++) {
-            resetCloud(i, UnityEngine.Random.Range(-distanceToReset, distanceToReset));
+            resetCloud(i, UnityEngine.Random.Range(distanceToReset, 2 * distanceToReset));
         }
         wind = GetComponent<AudioSource>();
     }
@@ -40,7 +40,7 @@ public class WindController : MonoBehaviour {
             var newDistance = Vector3.Distance(position, Vector3.zero);
             cloud.transform.position = position;
             if (newDistance > distanceToReset && newDistance > oldDistance) {
-                resetCloud(i, 12);
+                resetCloud(i, distanceToReset);
             }
         }
 
