@@ -4,19 +4,28 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class CultistScript : MonoBehaviour {
-    NavMeshAgent agent;
+    Vector3 initialPosition;
+    Vector3 target = new Vector3(0.890671f, 0, 0.403903f);
+    float initialDistance;
+    float radius = 0.7f;
+    float angleChangeSpeed = (2 * Mathf.PI) / 5;
+
     // Start is called before the first frame update
     void Start() {
-        agent = GetComponent<NavMeshAgent>();
-        // agent.
+        initialPosition = transform.position;
+        initialDistance = Vector3.Distance(target, initialPosition);
     }
 
     // Update is called once per frame
     void Update() {
-        if (Vector3.Distance(transform.position, Vector3.zero) <= 1.7) {
-
+        var distanceFromTarget = Vector3.Distance(transform.position, target);
+        if (distanceFromTarget <= radius) {
+            var angleChange = angleChangeSpeed * Time.deltaTime;
+            var angle = angleChange + Vector3.Angle(target + Vector3.left, transform.position);
+            transform.position = target + new Vector3(Mathf.Cos(angle) * radius, 0, Mathf.Sin(angle) * radius);
         } else {
-            transform.position = Vector3.Lerp(transform.position, Vector3.zero, Time.deltaTime);
+            var ratio = (initialDistance - distanceFromTarget + Time.deltaTime) / initialDistance;
+            transform.position = Vector3.Lerp(initialPosition, target, ratio);
         }
     }
 }
