@@ -8,7 +8,7 @@ public class CultistScript : MonoBehaviour {
     Vector3 initialPosition;
     Vector3 target = new Vector3(0.890671f, 0, 0.403903f);
     float initialDistance;
-    float radius = 0.7f;
+    float radius = 1.2f;
     float angleChangeSpeed;
     bool reported = false;
     Vector3 lastLocation;
@@ -46,6 +46,9 @@ public class CultistScript : MonoBehaviour {
         if (reported) {
             return;
         }
+        var otherPosition = collision.transform.position;
+        collision.transform.position = otherPosition + (transform.position - lastLocation);
         transform.position = lastLocation;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 }

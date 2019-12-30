@@ -14,6 +14,7 @@ public class FireScript : MonoBehaviour {
     private AudioSource sizzle;
     private AudioSource chant;
     int cultistCount = 0;
+    public int cultistsRequired;
 
     // Start is called before the first frame update
     void Start() {
@@ -43,11 +44,11 @@ public class FireScript : MonoBehaviour {
 
     public void reportEntered() {
         ++cultistCount;
-        if (cultistCount == 15) {
+        if (cultistCount == cultistsRequired) {
             endGameScreen.SetActive(true);
             endGameScreen.GetComponentInChildren<UnityEngine.UI.Text>().text = "You WIN :) :) :)";
         }
-        chant.volume = 0.2f + (((float) cultistCount) / 15 * 0.8f);
+        chant.volume = 0.2f + (((float) cultistCount) / cultistsRequired * 0.8f);
     }
 
     void OnTriggerEnter(Collider other) {
