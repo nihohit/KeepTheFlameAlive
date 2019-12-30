@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 635363dc07b469349bea54b86749bada
+guid: aa2edd7a5e683444b91f2b1ec99b923b
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
@@ -30,7 +30,7 @@ ModelImporter:
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
-    animationWrapMode: 2
+    animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations:
@@ -40,7 +40,7 @@ ModelImporter:
       internalID: 2264077025236624520
       firstFrame: 0
       lastFrame: 29
-      wrapMode: 2
+      wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
@@ -116,10 +116,10 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 1
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
