@@ -10,6 +10,13 @@ public class WindController : MonoBehaviour {
     float[] speedCoefficient;
     Vector3 windDirection = new Vector3(0, 0, 5);
     Vector3 previousMousePosition = Vector3.zero;
+    AudioSource wind;
+    float pitchMin = 0.8f;
+    float pitchMax = 1.2f;
+    float volumeMin = 0.8f;
+    float volumeMax = 1.1f;
+    float timeToIgnorePress = 1f;
+    float ignorePress;
 
     // Start is called before the first frame update
     void Start() {
@@ -19,6 +26,7 @@ public class WindController : MonoBehaviour {
         for (int i = 0; i < numberOfClouds; i++) {
             resetCloud(i, UnityEngine.Random.Range(-distanceToReset, distanceToReset));
         }
+        wind = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,12 +45,20 @@ public class WindController : MonoBehaviour {
         }
 
         var mousePosition = new Vector3(Input.mousePosition.x, 0, Input.mousePosition.y);
-        if (Input.GetMouseButton(0)) {
+        if (Input.GetMouseButton(0) && ignorePress + timeToIgnorePress < Time.time) {
             var difference = (mousePosition - previousMousePosition);
             difference.x /= Screen.width;
             difference.z /= Screen.height;
             windDirection += difference / Time.deltaTime * (slider.value > 20 ? 1f : 0.1f);
             slider.value -= 100 * Time.deltaTime;
+            if (!wind.isPlaying) {
+                wind.pitch = UnityEngine.Random.Range(pitchMin, pitchMax);
+                wind.volume = UnityEngine.Random.Range(volumeMin, volumeMax);
+                wind.Play();
+            }
+            if (slider.value <= 0) {
+                ignorePress = Time.time;
+            }
         } else {
             slider.value += 40 * Time.deltaTime;
             if (Vector3.Distance(windDirection, Vector3.zero) < 5) {
