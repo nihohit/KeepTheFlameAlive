@@ -17,6 +17,8 @@ public class WindController : MonoBehaviour {
     float volumeMax = 1.1f;
     float timeToIgnorePress = 1f;
     float ignorePress;
+    public AudioClip[] winds;
+    int index = 0;
 
     // Start is called before the first frame update
     void Start() {
@@ -54,6 +56,11 @@ public class WindController : MonoBehaviour {
             if (!wind.isPlaying) {
                 wind.pitch = UnityEngine.Random.Range(pitchMin, pitchMax);
                 wind.volume = UnityEngine.Random.Range(volumeMin, volumeMax);
+                wind.clip = winds[index];
+                index++;
+                if (index == winds.Length) {
+                    index = 0;
+                }
                 wind.Play();
             }
             if (slider.value <= 0) {
