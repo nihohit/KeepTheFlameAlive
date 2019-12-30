@@ -46,7 +46,7 @@ public class FieldScript : MonoBehaviour {
         popSound.volume = UnityEngine.Random.Range(volumeMin, volumeMax);
         cultist.GetComponent<CultistScript>().fire = fire;
         var model = cultist.transform.Find("Tiki").transform;
-        var head = model.Find("Eyeball2");
+        var head = model.Find("Head");
         var skirt = model.Find("Skirt");
         head.GetComponent<Renderer>().material = alternativeMaterials[UnityEngine.Random.Range(0, alternativeMaterials.Length)];
         skirt.GetComponent<Renderer>().material = alternativeMaterials[UnityEngine.Random.Range(0, alternativeMaterials.Length)];
