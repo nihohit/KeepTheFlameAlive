@@ -689,6 +689,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceToReset: 12
   healthObject: {fileID: 1149030011}
+  winds:
+  - {fileID: 8300000, guid: 07705b173eb0cc24eab30237f06b415b, type: 3}
+  - {fileID: 8300000, guid: a688a6183e5a25e43939261f4af5d5d5, type: 3}
+  - {fileID: 8300000, guid: 82987b2c278809e46a4c5a9b6acca009, type: 3}
+  - {fileID: 8300000, guid: cbb0b44dad8a2dd4aaf42f2e9f9290d0, type: 3}
+  - {fileID: 8300000, guid: 1a21b8780cdd7384a84afc1eccf5d3df, type: 3}
+  - {fileID: 8300000, guid: 5d7c0365d5a56714394818a2074ab3e8, type: 3}
 --- !u!82 &43975009
 AudioSource:
   m_ObjectHideFlags: 0
