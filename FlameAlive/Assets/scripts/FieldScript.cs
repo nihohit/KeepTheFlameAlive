@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class FieldScript : MonoBehaviour {
     public GameObject textObject;
+    public FireScript fire;
     public GameObject growable;
     public string headerText;
     public int gainPerUpdate;
@@ -39,9 +40,10 @@ public class FieldScript : MonoBehaviour {
         score = 0;
         var effect = growable.GetComponentInChildren<ParticleSystem>();
         effect.Play();
-        GameObject.Instantiate(Resources.Load("Cultist"), growable.transform.position, Quaternion.identity);
+        var cultist = (GameObject) GameObject.Instantiate(Resources.Load("Cultist"), growable.transform.position, Quaternion.identity);
         popSound.pitch = UnityEngine.Random.Range(pitchMin, pitchMax);
         popSound.volume = UnityEngine.Random.Range(volumeMin, volumeMax);
+        cultist.GetComponent<CultistScript>().fire = fire;
         popSound.Play();
     }
 

@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class CultistScript : MonoBehaviour {
+    public FireScript fire;
     Vector3 initialPosition;
     Vector3 target = new Vector3(0.890671f, 0, 0.403903f);
     float initialDistance;
     float radius = 0.7f;
     float angleChangeSpeed;
+    bool reported = false;
 
     // Start is called before the first frame update
     void Start() {
@@ -22,6 +24,10 @@ public class CultistScript : MonoBehaviour {
         transform.LookAt(target);
         var distanceFromTarget = Vector3.Distance(transform.position, target);
         if (distanceFromTarget <= radius) {
+            if (!reported) {
+                fire.reportEntered();
+                reported = true;
+            }
             transform.RotateAround(target, Vector3.up, angleChangeSpeed * Time.deltaTime);
         } else {
             var ratio = (initialDistance - distanceFromTarget + Time.deltaTime) / initialDistance;

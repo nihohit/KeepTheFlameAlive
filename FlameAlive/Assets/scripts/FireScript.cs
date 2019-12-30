@@ -12,12 +12,17 @@ public class FireScript : MonoBehaviour {
     private int numberOfCollidingClouds = 0;
     private int score;
     private AudioSource sizzle;
+    private AudioSource chant;
+    int cultistCount = 0;
 
     // Start is called before the first frame update
     void Start() {
         slider = healthObject.GetComponent<UnityEngine.UI.Slider>();
         score = (int) slider.value;
-        sizzle = GetComponent<AudioSource>();
+        var audios = GetComponents<AudioSource>();
+        sizzle = audios[0];
+        chant = audios[1];
+        chant.volume = 0;
     }
 
     // Update is called once per frame
@@ -34,6 +39,15 @@ public class FireScript : MonoBehaviour {
             endGameScreen.SetActive(true);
             endGameScreen.GetComponentInChildren<UnityEngine.UI.Text>().text = "You LOSE :(";
         }
+    }
+
+    public void reportEntered() {
+        ++cultistCount;
+        if (cultistCount == 15) {
+            endGameScreen.SetActive(true);
+            endGameScreen.GetComponentInChildren<UnityEngine.UI.Text>().text = "You WIN :) :) :)";
+        }
+        chant.volume = 0.2f + (((float) cultistCount) / 15 * 0.8f);
     }
 
     void OnTriggerEnter(Collider other) {
