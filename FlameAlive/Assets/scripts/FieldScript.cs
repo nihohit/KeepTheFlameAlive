@@ -18,6 +18,7 @@ public class FieldScript : MonoBehaviour {
     float pitchMax = 1.2f;
     float volumeMin = 0.8f;
     float volumeMax = 1.1f;
+    public Material[] alternativeMaterials;
 
     // Start is called before the first frame update
     void Start() {
@@ -44,6 +45,11 @@ public class FieldScript : MonoBehaviour {
         popSound.pitch = UnityEngine.Random.Range(pitchMin, pitchMax);
         popSound.volume = UnityEngine.Random.Range(volumeMin, volumeMax);
         cultist.GetComponent<CultistScript>().fire = fire;
+        var model = cultist.transform.Find("Tiki").transform;
+        var head = model.Find("Eyeball2");
+        var skirt = model.Find("Skirt");
+        head.GetComponent<Renderer>().material = alternativeMaterials[UnityEngine.Random.Range(0, alternativeMaterials.Length)];
+        skirt.GetComponent<Renderer>().material = alternativeMaterials[UnityEngine.Random.Range(0, alternativeMaterials.Length)];
         popSound.Play();
     }
 

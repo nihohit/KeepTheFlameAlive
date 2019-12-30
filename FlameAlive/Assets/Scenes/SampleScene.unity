@@ -8031,6 +8031,12 @@ MonoBehaviour:
   headerText: Tomatoes
   gainPerUpdate: 3
   lossPerUpdate: 2
+  alternativeMaterials:
+  - {fileID: 2100000, guid: 6128ebba909a60a419db0da1c7a6c4ea, type: 2}
+  - {fileID: 2100000, guid: 29ec155777f91b9478281da243e1c229, type: 2}
+  - {fileID: 2100000, guid: 46780f587d917114fb03a9cd6029accf, type: 2}
+  - {fileID: 2100000, guid: c881b08746fcb4c499ace7611e801eaf, type: 2}
+  - {fileID: 2100000, guid: 16b51f6aff5530f4186101c94471f86a, type: 2}
 --- !u!54 &873630446
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8182,6 +8188,12 @@ MonoBehaviour:
   headerText: Carrots
   gainPerUpdate: 3
   lossPerUpdate: 2
+  alternativeMaterials:
+  - {fileID: 2100000, guid: 6128ebba909a60a419db0da1c7a6c4ea, type: 2}
+  - {fileID: 2100000, guid: c881b08746fcb4c499ace7611e801eaf, type: 2}
+  - {fileID: 2100000, guid: 16b51f6aff5530f4186101c94471f86a, type: 2}
+  - {fileID: 2100000, guid: a4c01c7139ff46a42a73c095a5a05d48, type: 2}
+  - {fileID: 2100000, guid: 46780f587d917114fb03a9cd6029accf, type: 2}
 --- !u!54 &887557230
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11403,8 +11415,8 @@ ParticleSystem:
           outSlope: 1
           tangentMode: 34
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         - serializedVersion: 3
           time: 1
           value: 1
@@ -11412,8 +11424,8 @@ ParticleSystem:
           outSlope: 1
           tangentMode: 34
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -22505,22 +22517,22 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
-          inSlope: 1
-          outSlope: 1
-          tangentMode: 34
+          value: 0.0501709
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         - serializedVersion: 3
           time: 1
           value: 1
-          inSlope: 1
-          outSlope: 1
-          tangentMode: 34
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
