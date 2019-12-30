@@ -33,6 +33,7 @@ public class FieldScript : MonoBehaviour {
         score = 0;
         var effect = growable.GetComponentInChildren<ParticleSystem>();
         effect.Play();
+        GameObject.Instantiate(Resources.Load("Cultist"), growable.transform.position, Quaternion.identity);
     }
 
     void OnTriggerEnter(Collider other) {
