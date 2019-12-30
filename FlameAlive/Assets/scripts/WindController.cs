@@ -61,12 +61,21 @@ public class WindController : MonoBehaviour {
             }
         } else {
             slider.value += 40 * Time.deltaTime;
-            if (Vector3.Distance(windDirection, Vector3.zero) < 5) {
+            var strength = Vector3.Distance(windDirection, Vector3.zero);
+            var tooHigh = strength > 7;
+            var tooLow = strength < 5;
+            if (tooHigh || tooLow) {
                 var rateOfChange = 1.5f;
                 var xChange = UnityEngine.Random.Range(0f, rateOfChange);
                 var zChange = rateOfChange - xChange;
-                windDirection.x += (windDirection.x > 0 ? xChange : -xChange) * Time.deltaTime;
-                windDirection.z += (windDirection.z > 0 ? zChange : -zChange) * Time.deltaTime;
+                if (tooHigh) {
+                    windDirection.x -= (windDirection.x > 0 ? xChange : -xChange) * Time.deltaTime;
+                    windDirection.z -= (windDirection.z > 0 ? zChange : -zChange) * Time.deltaTime;
+                } else {
+                    windDirection.x += (windDirection.x > 0 ? xChange : -xChange) * Time.deltaTime;
+                    windDirection.z += (windDirection.z > 0 ? zChange : -zChange) * Time.deltaTime;
+                }
+
             }
         }
 
