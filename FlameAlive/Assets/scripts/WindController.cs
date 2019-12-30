@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WindController : MonoBehaviour {
     public float distanceToReset;
+    public GameObject healthObject;
+    private UnityEngine.UI.Slider slider;
     int numberOfClouds;
     float[] speedCoefficient;
     Vector3 windDirection = new Vector3(0, 0, 5);
@@ -11,12 +13,12 @@ public class WindController : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+        slider = healthObject.GetComponent<UnityEngine.UI.Slider>();
         numberOfClouds = transform.childCount;
         speedCoefficient = new float[numberOfClouds];
         for (int i = 0; i < numberOfClouds; i++) {
             resetCloud(i, UnityEngine.Random.Range(-distanceToReset, distanceToReset));
         }
-        // Debug.Break();
     }
 
     // Update is called once per frame
@@ -39,7 +41,10 @@ public class WindController : MonoBehaviour {
             var difference = (mousePosition - previousMousePosition);
             difference.x /= Screen.width;
             difference.z /= Screen.height;
-            windDirection += difference / Time.deltaTime;
+            windDirection += difference / Time.deltaTime * (slider.value > 20 ? 1f : 0.1f);
+            slider.value -= 100 * Time.deltaTime;
+        } else {
+            slider.value += 40 * Time.deltaTime;
         }
 
         previousMousePosition = mousePosition;
