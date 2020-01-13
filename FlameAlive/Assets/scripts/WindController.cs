@@ -5,7 +5,7 @@ using UnityEngine;
 public class WindController : MonoBehaviour {
     public float distanceToReset;
     public GameObject healthObject;
-    private UnityEngine.UI.Slider slider;
+    private UnityEngine.UI.Slider manaSlider;
     int numberOfClouds;
     float[] speedCoefficient;
     Vector3 windDirection = new Vector3(0, 0, 5);
@@ -22,7 +22,7 @@ public class WindController : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        slider = healthObject.GetComponent<UnityEngine.UI.Slider>();
+        manaSlider = healthObject.GetComponent<UnityEngine.UI.Slider>();
         numberOfClouds = transform.childCount;
         speedCoefficient = new float[numberOfClouds];
         for (int i = 0; i < numberOfClouds; i++) {
@@ -33,6 +33,11 @@ public class WindController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        updateCloudPositions();
+        updateWindSpeed();
+    }
+
+    void updateCloudPositions() {
         var windChange = windDirection * Time.deltaTime;
         for (int i = 0; i < numberOfClouds; ++i) {
             var cloud = transform.GetChild(i);
@@ -45,48 +50,6 @@ public class WindController : MonoBehaviour {
                 resetCloud(i, distanceToReset);
             }
         }
-
-        var mousePosition = new Vector3(Input.mousePosition.x, 0, Input.mousePosition.y);
-        if (Input.GetMouseButton(0) && ignorePress + timeToIgnorePress < Time.time) {
-            var difference = (mousePosition - previousMousePosition);
-            difference.x /= Screen.width;
-            difference.z /= Screen.height;
-            windDirection += difference / Time.deltaTime * (slider.value > 20 ? 1f : 0.1f);
-            slider.value -= 100 * Time.deltaTime;
-            if (!wind.isPlaying) {
-                wind.pitch = UnityEngine.Random.Range(pitchMin, pitchMax);
-                wind.volume = UnityEngine.Random.Range(volumeMin, volumeMax);
-                wind.clip = winds[index];
-                index++;
-                if (index == winds.Length) {
-                    index = 0;
-                }
-                wind.Play();
-            }
-            if (slider.value <= 0) {
-                ignorePress = Time.time;
-            }
-        } else {
-            slider.value += 40 * Time.deltaTime;
-            var strength = Vector3.Distance(windDirection, Vector3.zero);
-            var tooHigh = strength > 7;
-            var tooLow = strength < 5;
-            if (tooHigh || tooLow) {
-                var rateOfChange = 1.5f;
-                var xChange = UnityEngine.Random.Range(0f, rateOfChange);
-                var zChange = rateOfChange - xChange;
-                if (tooHigh) {
-                    windDirection.x -= (windDirection.x > 0 ? xChange : -xChange) * Time.deltaTime;
-                    windDirection.z -= (windDirection.z > 0 ? zChange : -zChange) * Time.deltaTime;
-                } else {
-                    windDirection.x += (windDirection.x > 0 ? xChange : -xChange) * Time.deltaTime;
-                    windDirection.z += (windDirection.z > 0 ? zChange : -zChange) * Time.deltaTime;
-                }
-
-            }
-        }
-
-        previousMousePosition = mousePosition;
     }
 
     void resetCloud(int i, float distanceToCenter) {
@@ -106,6 +69,61 @@ public class WindController : MonoBehaviour {
 
     void rerollSpeed(int i) {
         speedCoefficient[i] = UnityEngine.Random.Range(0.8f, 1.2f);
+    }
+
+    void updateWindSpeed() {
+        var mousePosition = new Vector3(Input.mousePosition.x, 0, Input.mousePosition.y);
+        if (Input.GetMouseButton(0) && ignorePress + timeToIgnorePress < Time.time) {
+            updateWindWithPlayerInput(mousePosition);
+        } else {
+            restoreWindToBaseSpeed();
+        }
+
+        previousMousePosition = mousePosition;
+    }
+
+    void updateWindWithPlayerInput(Vector3 mousePosition) {
+        var difference = (mousePosition - previousMousePosition);
+        difference.x /= Screen.width;
+        difference.z /= Screen.height;
+        windDirection += difference / Time.deltaTime * (manaSlider.value > 20 ? 1f : 0.1f);
+        manaSlider.value -= 100 * Time.deltaTime;
+        playWindSound();
+        if (manaSlider.value <= 0) {
+            ignorePress = Time.time;
+        }
+    }
+
+    void playWindSound() {
+        if (wind.isPlaying) {
+            return;
+        }
+        wind.pitch = UnityEngine.Random.Range(pitchMin, pitchMax);
+        wind.volume = UnityEngine.Random.Range(volumeMin, volumeMax);
+        wind.clip = winds[index];
+        index++;
+        if (index == winds.Length) {
+            index = 0;
+        }
+        wind.Play();
+    }
+
+    void restoreWindToBaseSpeed() {
+        manaSlider.value += 40 * Time.deltaTime;
+
+        var strength = Vector3.Distance(windDirection, Vector3.zero);
+        var windBaseline = 5;
+        if (strength == windBaseline) {
+            return;
+        }
+        var rateOfChange = 1.5f;
+        var xChange = UnityEngine.Random.Range(0f, rateOfChange);
+        xChange = (windDirection.x > 0 ? xChange : -xChange) * Time.deltaTime;
+        var zChange = rateOfChange - xChange;
+        zChange = (windDirection.z > 0 ? zChange : -zChange) * Time.deltaTime;;
+        var tooStrong = strength > windBaseline;
+        windDirection.x -= tooStrong ? xChange : -xChange;
+        windDirection.z -= tooStrong ? zChange : -zChange;
     }
 
     Vector3 vectorOnRange(float min, float max) {
