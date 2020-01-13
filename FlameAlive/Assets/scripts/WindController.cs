@@ -87,6 +87,12 @@ public class WindController : MonoBehaviour {
         difference.x /= Screen.width;
         difference.z /= Screen.height;
         windDirection += difference / Time.deltaTime * (manaSlider.value > 20 ? 1f : 0.1f);
+        var maxMagnitude = 10;
+        if (windDirection.magnitude > maxMagnitude) {
+            windDirection.Normalize();
+            windDirection.x *= maxMagnitude;
+            windDirection.z *= maxMagnitude;
+        }
         manaSlider.value -= 100 * Time.deltaTime;
         playWindSound();
         if (manaSlider.value <= 0) {
